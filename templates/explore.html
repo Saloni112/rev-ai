@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Services | RevAI</title>
+    <link rel="stylesheet" href="../Css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <!-- AI Particles Background -->
+    <div class="ai-particles" id="particles-container"></div>
+    
+    <header>
+        <nav class="navbar">
+            <a href="#" class="nav-logo">
+                <div class="logo-orb">
+                    <img src="../images/logo.png" alt="Logo" class="logo-image">
+                    <div class="logo-glow"></div>
+                </div>
+                <h2 class="logo-text">Rev<span class="logo-highlight">AI</span></h2>
+            </a>
+
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="explore.html" class="nav-link active">
+                        <i class="fas fa-compass"></i> Explore
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="companies.html" class="nav-link">
+                        <i class="fas fa-building"></i> Companies
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="GetInTouch.html" class="nav-link">
+                        <i class="fas fa-comment-alt"></i> Get In Touch
+                    </a>
+                </li>
+            </ul>
+            
+            <div class="nav-actions">
+                <a href="#" class="btn-ai">
+                    <i class="fas fa-rocket"></i> Try AI Services
+                </a>
+            </div>
+            
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="services-hero">
+        <div class="container">
+            <div class="services-hero-content">
+                <div class="hero-badge animate__animated animate__fadeInUp">
+                    <span class="badge-glow"></span>
+                    <h4><i class="fas fa-cogs"></i> AI Services</h4>
+                </div>
+                <h1 class="hero-title animate__animated animate__fadeInUp">
+                    Transformative <span class="highlight">AI Solutions</span> for Modern Business
+                </h1>
+                <p class="hero-description animate__animated animate__fadeInUp">
+                    Discover cutting-edge artificial intelligence services that revolutionize industries, 
+                    enhance productivity, and drive innovation across all sectors.
+                </p>
+                <div class="services-search">
+                    <div class="search-wrapper">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search AI services..." id="searchInput">
+                        <button class="search-btn" onclick="searchServices()">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat animate__animated animate__fadeInLeft">
+                        <div class="stat-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <span class="stat-number" data-count="50">0</span>
+                        <span class="stat-label">AI Services</span>
+                    </div>
+                    <div class="stat animate__animated animate__fadeInUp">
+                        <div class="stat-icon">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <span class="stat-number" data-count="25">0</span>
+                        <span class="stat-label">Industries</span>
+                    </div>
+                    <div class="stat animate__animated animate__fadeInRight">
+                        <div class="stat-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <span class="stat-number" data-count="95">0</span>
+                        <span class="stat-label">Success Rate</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Services Grid -->
+    <section class="services-grid-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle animate__animated animate__fadeInUp">
+                    <i class="fas fa-star"></i> Featured Services
+                </span>
+                <h2 class="section-title animate__animated animate__fadeInUp">
+                    AI-Powered <span class="accent">Solutions</span> for Every Need
+                </h2>
+                <p class="section-description animate__animated animate__fadeInUp">
+                    Explore our comprehensive suite of artificial intelligence services designed to 
+                    transform your business operations and drive unprecedented growth.
+                </p>
+            </div>
+            
+            <!-- Services Filter -->
+            <div class="services-filter">
+                <button class="filter-btn active" onclick="filterServices('all')">
+                    <i class="fas fa-th-large"></i> All Services
+                </button>
+                <button class="filter-btn" onclick="filterServices('automation')">
+                    <i class="fas fa-robot"></i> Automation
+                </button>
+                <button class="filter-btn" onclick="filterServices('analytics')">
+                    <i class="fas fa-chart-bar"></i> Analytics
+                </button>
+                <button class="filter-btn" onclick="filterServices('security')">
+                    <i class="fas fa-shield-alt"></i> Security
+                </button>
+                <button class="filter-btn" onclick="filterServices('finance')">
+                    <i class="fas fa-chart-pie"></i> Finance
+                </button>
+                <button class="filter-btn" onclick="filterServices('marketing')">
+                    <i class="fas fa-bullhorn"></i> Marketing
+                </button>
+            </div>
+            
+            <!-- Services Grid -->
+            <div class="services-grid" id="servicesGrid">
+                <!-- Services will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">
+                    <i class="fas fa-play-circle"></i> How It Works
+                </span>
+                <h2 class="section-title">
+                    Implementing AI <span class="accent">Solutions</span>
+                </h2>
+                <p class="section-description">
+                    Our streamlined process ensures successful AI integration and maximum ROI.
+                </p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">
+                        <span>01</span>
+                        <div class="step-glow"></div>
+                    </div>
+                    <div class="step-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Needs Assessment</h3>
+                    <p>We analyze your business requirements and identify AI opportunities.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">
+                        <span>02</span>
+                        <div class="step-glow"></div>
+                    </div>
+                    <div class="step-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Solution Design</h3>
+                    <p>Custom AI solution architecture tailored to your specific needs.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">
+                        <span>03</span>
+                        <div class="step-glow"></div>
+                    </div>
+                    <div class="step-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Development</h3>
+                    <p>Building and training AI models with cutting-edge technology.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">
+                        <span>04</span>
+                        <div class="step-glow"></div>
+                    </div>
+                    <div class="step-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Deployment</h3>
+                    <p>Seamless integration and launch of AI solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-glow"></div>
+                <h2>Ready to Transform Your Business with AI?</h2>
+                <p>Schedule a personalized demo and discover how our AI services can revolutionize your operations.</p>
+                <div class="cta-actions">
+                    <a href="#" class="btn btn-primary btn-glow">
+                        <i class="fas fa-calendar-alt"></i> Book Demo
+                    </a>
+                    <a href="#" class="btn btn-secondary">
+                        <i class="fas fa-file-download"></i> Download Brochure
+                    </a>
+                </div>
+                <p class="form-note">
+                    <i class="fas fa-shield-alt"></i> 
+                    Your data is protected by enterprise-grade security protocols.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="footer-logo">
+                        <div class="logo-orb">
+                            <img src="../images/logo.png" alt="Logo" class="logo-image">
+                        </div>
+                        <h2 class="logo-text">Rev<span class="logo-highlight">AI</span></h2>
+                    </a>
+                    <p class="footer-description">
+                        Pioneering the AI revolution through innovative services, research, 
+                        and transformative technology solutions.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                            <div class="link-glow"></div>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                            <div class="link-glow"></div>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-github"></i>
+                            <div class="link-glow"></div>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-discord"></i>
+                            <div class="link-glow"></div>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h3>AI Services</h3>
+                        <ul>                                            
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> AI Chatbots</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Predictive Analytics</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> AI Security</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Financial AI</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="link-group"> 
+                        <h3>Industries</h3>
+                        <ul>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Healthcare</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Finance</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Retail</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Manufacturing</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="link-group">
+                        <h3>Resources</h3>
+                        <ul>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Case Studies</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Whitepapers</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> API Docs</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Support</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 RevAI. All rights reserved. </p>
+                <div class="footer-legal">
+                    <a href="#"><i class="fas fa-shield-alt"></i> Privacy Policy</a>
+                    <a href="#"><i class="fas fa-file-contract"></i> Terms of Service</a>
+                    <a href="#"><i class="fas fa-balance-scale"></i> AI Ethics Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="../js/particles.js"></script>
+    <script>
+        // Service data
+        const services = [
+            { 
+                id: 1,
+                src: '../images/chatbot.jpg', 
+                title: 'AI Chatbots & Virtual Assistants', 
+                category: 'automation', 
+                desc: 'Intelligent conversational AI that enhances customer interactions and streamlines operational efficiency through natural language processing.',
+                features: ['24/7 Customer Support', 'Multilingual Support', 'Contextual Understanding', 'Seamless Integration']
+            },
+            { 
+                id: 2,
+                src: '../images/predictive.jpg', 
+                title: 'Predictive Analytics Platform', 
+                category: 'analytics', 
+                desc: 'Advanced machine learning algorithms analyze historical data to forecast trends and make data-driven business decisions.',
+                features: ['Real-time Analysis', 'Trend Prediction', 'Risk Assessment', 'Custom Dashboards']
+            },
+            { 
+                id: 3,
+                src: '../images/aimarketing.jpg', 
+                title: 'AI Marketing Automation', 
+                category: 'marketing', 
+                desc: 'Transform your marketing strategy with AI-powered automation for personalized campaigns and optimized ROI.',
+                features: ['Audience Segmentation', 'Content Optimization', 'Campaign Analytics', 'ROI Tracking']
+            },
+            { 
+                id: 4,
+                src: '../images/aiinventory.jpg', 
+                title: 'AI Inventory Management', 
+                category: 'automation', 
+                desc: 'Smart inventory solutions that optimize stock levels, reduce waste, and improve supply chain efficiency.',
+                features: ['Demand Forecasting', 'Automated Reordering', 'Inventory Optimization', 'Real-time Tracking']
+            },
+            { 
+                id: 5,
+                src: '../images/cybersecurityimg.png', 
+                title: 'AI-Driven Cybersecurity', 
+                category: 'security', 
+                desc: 'Proactive threat detection and response systems powered by artificial intelligence to protect your digital assets.',
+                features: ['Real-time Monitoring', 'Threat Prediction', 'Automated Response', 'Compliance Reporting']
+            },
+            { 
+                id: 6,
+                src: '../images/robot.png', 
+                title: 'AI Financial Analysis', 
+                category: 'finance', 
+                desc: 'Advanced financial AI tools for risk assessment, fraud detection, and strategic investment planning.',
+                features: ['Risk Analysis', 'Fraud Detection', 'Investment Insights', 'Market Prediction']
+            },
+            { 
+                id: 7,
+                src: '../images/aiContent.jpeg', 
+                title: 'AI Content Generation', 
+                category: 'marketing', 
+                desc: 'Generate high-quality, SEO-optimized content at scale using advanced natural language generation.',
+                features: ['SEO Optimization', 'Multi-format Content', 'Brand Consistency', 'Content Strategy']
+            },
+            { 
+                id: 8,
+                src: '../images/healthcare.jpg', 
+                title: 'Healthcare AI Diagnostics', 
+                category: 'analytics', 
+                desc: 'AI-powered diagnostic tools that enhance medical accuracy and improve patient outcomes.',
+                features: ['Medical Imaging', 'Symptom Analysis', 'Treatment Suggestions', 'Patient Monitoring']
+            }
+        ];
+
+        let currentFilter = 'all';
+        let currentServiceIndex = 0;
+        let currentServices = [];
+
+        // Initialize services
+        function loadServices() {
+            const servicesGrid = document.getElementById('servicesGrid');
+            servicesGrid.innerHTML = '';
+            
+            currentServices = currentFilter === 'all' 
+                ? services 
+                : services.filter(service => service.category === currentFilter);
+            
+            currentServices.forEach((service, index) => {
+                const card = document.createElement('div');
+                card.className = `service-card animate__animated animate__fadeInUp`;
+                card.style.animationDelay = `${index * 0.1}s`;
+                card.onclick = () => openServiceDetails(index);
+                
+                card.innerHTML = `
+                    <div class="service-card-inner">
+                        <div class="service-image">
+                            <img src="${service.src}" alt="${service.title}" loading="lazy">
+                            <div class="service-overlay">
+                                <div class="service-category">
+                                    <i class="fas fa-${getCategoryIcon(service.category)}"></i>
+                                    ${service.category.charAt(0).toUpperCase() + service.category.slice(1)}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service-content">
+                            <h3>${service.title}</h3>
+                            <p>${service.desc.substring(0, 100)}...</p>
+                            <div class="service-features-preview">
+                                ${service.features.slice(0, 2).map(feature => `
+                                    <span><i class="fas fa-check"></i> ${feature}</span>
+                                `).join('')}
+                            </div>
+                            <div class="service-actions">
+                                <button class="btn-service" onclick="event.stopPropagation(); openServiceDetails(${index})">
+                                    <i class="fas fa-eye"></i> View Details
+                                </button>
+                                <button class="btn-service btn-secondary" onclick="event.stopPropagation(); requestDemo(${service.id})">
+                                    <i class="fas fa-calendar"></i> Demo
+                                </button>
+                            </div>
+                        </div>
+                        <div class="service-glow"></div>
+                    </div>
+                `;
+                
+                servicesGrid.appendChild(card);
+            });
+        }
+
+        // Filter services
+        function filterServices(category) {
+            currentFilter = category;
+            
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            loadServices();
+        }
+
+        // Search services
+        function searchServices() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            if (!searchTerm) {
+                loadServices();
+                return;
+            }
+            
+            const servicesGrid = document.getElementById('servicesGrid');
+            servicesGrid.innerHTML = '';
+            
+            const filtered = services.filter(service => 
+                service.title.toLowerCase().includes(searchTerm) || 
+                service.desc.toLowerCase().includes(searchTerm) ||
+                service.category.toLowerCase().includes(searchTerm) ||
+                service.features.some(feature => feature.toLowerCase().includes(searchTerm))
+            );
+            
+            currentServices = filtered;
+            
+            filtered.forEach((service, index) => {
+                const card = document.createElement('div');
+                card.className = `service-card animate__animated animate__fadeInUp`;
+                card.style.animationDelay = `${index * 0.1}s`;
+                card.onclick = () => openServiceDetails(index);
+                
+                card.innerHTML = `
+                    <div class="service-card-inner">
+                        <div class="service-image">
+                            <img src="${service.src}" alt="${service.title}">
+                            <div class="service-overlay">
+                                <div class="service-category">
+                                    <i class="fas fa-${getCategoryIcon(service.category)}"></i>
+                                    ${service.category.charAt(0).toUpperCase() + service.category.slice(1)}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="service-content">
+                            <h3>${service.title}</h3>
+                            <p>${service.desc.substring(0, 100)}...</p>
+                            <div class="service-features-preview">
+                                ${service.features.slice(0, 2).map(feature => `
+                                    <span><i class="fas fa-check"></i> ${feature}</span>
+                                `).join('')}
+                            </div>
+                            <div class="service-actions">
+                                <button class="btn-service" onclick="event.stopPropagation(); openServiceDetails(${index})">
+                                    <i class="fas fa-eye"></i> View Details
+                                </button>
+                                <button class="btn-service btn-secondary" onclick="event.stopPropagation(); requestDemo(${service.id})">
+                                    <i class="fas fa-calendar"></i> Demo
+                                </button>
+                            </div>
+                        </div>
+                        <div class="service-glow"></div>
+                    </div>
+                `;
+                
+                servicesGrid.appendChild(card);
+            });
+        }
+
+        // Get category icon
+        function getCategoryIcon(category) {
+            const icons = {
+                'automation': 'robot',
+                'analytics': 'chart-bar',
+                'security': 'shield-alt',
+                'finance': 'chart-pie',
+                'marketing': 'bullhorn'
+            };
+            return icons[category] || 'cogs';
+        }
+
+        // Open service details in lightbox
+        function openServiceDetails(index) {
+            currentServiceIndex = index;
+            const service = currentServices[index];
+            
+            document.getElementById('lightboxImage').src = service.src;
+            document.getElementById('lightboxTitle').textContent = service.title;
+            document.getElementById('lightboxDescription').textContent = service.desc;
+            document.getElementById('lightboxCategory').textContent = 
+                service.category.charAt(0).toUpperCase() + service.category.slice(1);
+            
+            const featuresList = document.getElementById('lightboxFeatures');
+            featuresList.innerHTML = '';
+            service.features.forEach(feature => {
+                const li = document.createElement('li');
+                li.innerHTML = `<i class="fas fa-check"></i> ${feature}`;
+                featuresList.appendChild(li);
+            });
+            
+            document.getElementById('lightboxModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close lightbox
+        function closeLightbox() {
+            document.getElementById('lightboxModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Navigate services in lightbox
+        function nextService() {
+            currentServiceIndex = (currentServiceIndex + 1) % currentServices.length;
+            const service = currentServices[currentServiceIndex];
+            
+            updateLightbox(service);
+        }
+
+        function prevService() {
+            currentServiceIndex = (currentServiceIndex - 1 + currentServices.length) % currentServices.length;
+            const service = currentServices[currentServiceIndex];
+            
+            updateLightbox(service);
+        }
+
+        function updateLightbox(service) {
+            document.getElementById('lightboxImage').src = service.src;
+            document.getElementById('lightboxTitle').textContent = service.title;
+            document.getElementById('lightboxDescription').textContent = service.desc;
+            document.getElementById('lightboxCategory').textContent = 
+                service.category.charAt(0).toUpperCase() + service.category.slice(1);
+            
+            const featuresList = document.getElementById('lightboxFeatures');
+            featuresList.innerHTML = '';
+            service.features.forEach(feature => {
+                const li = document.createElement('li');
+                li.innerHTML = `<i class="fas fa-check"></i> ${feature}`;
+                featuresList.appendChild(li);
+            });
+        }
+
+        // Request demo
+        function requestDemo(serviceId) {
+            const service = services.find(s => s.id === serviceId);
+            alert(`Demo requested for: ${service.title}\nOur team will contact you shortly.`);
+        }
+
+        // Initialize on load
+        window.onload = function() {
+            loadServices();
+            
+            // Animate stats
+            const stats = document.querySelectorAll('.stat-number');
+            stats.forEach(stat => {
+                const target = parseInt(stat.getAttribute('data-count'));
+                const duration = 2000;
+                const increment = target / (duration / 16);
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        stat.textContent = target;
+                        clearInterval(timer);
+                    } else {
+                        stat.textContent = Math.floor(current);
+                    }
+                }, 16);
+            });
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                const modal = document.getElementById('lightboxModal');
+                if (modal.style.display === 'flex') {
+                    if (e.key === 'Escape') closeLightbox();
+                    if (e.key === 'ArrowRight') nextService();
+                    if (e.key === 'ArrowLeft') prevService();
+                }
+            });
+            
+            // Close lightbox on outside click
+            document.getElementById('lightboxModal').addEventListener('click', (e) => {
+                if (e.target.id === 'lightboxModal') closeLightbox();
+            });
+            
+            // Search input event
+            document.getElementById('searchInput').addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') searchServices();
+            });
+        };
+
+        // Mobile menu toggle
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        mobileMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+        
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

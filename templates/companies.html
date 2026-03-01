@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Companies | RevAI</title>
+  <link rel="stylesheet" href="../Css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+  <!-- AI Particles Background -->
+  <div class="ai-particles" id="particles-container"></div>
+  
+  <header>
+    <nav class="navbar">
+      <a href="#" class="nav-logo">
+        <div class="logo-orb">
+          <img src="../images/logo.png" alt="Logo" class="logo-image">
+          <div class="logo-glow"></div>
+        </div>
+        <h2 class="logo-text">Rev<span class="logo-highlight">AI</span></h2>
+      </a>
+
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">
+            <i class="fas fa-home"></i> Home
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="explore.html" class="nav-link">
+            <i class="fas fa-compass"></i> Explore
+          </a>
+        </li>
+         <li class="nav-item">
+          <a href="companies.html" class="nav-link active">
+            <i class="fas fa-building"></i> Companies
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="GetInTouch.html" class="nav-link">
+            <i class="fas fa-comment-alt"></i> Get In Touch
+          </a>
+        </li>
+      </ul>
+      
+      <div class="nav-actions">
+        <a href="#" class="btn-ai">
+          <i class="fas fa-rocket"></i> Partner with Us
+        </a>
+      </div>
+      
+      <div class="menu-toggle" id="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="companies-hero">
+    <div class="container">
+      <div class="companies-hero-content">
+        <div class="hero-badge animate__animated animate__fadeInUp">
+          <span class="badge-glow"></span>
+          <h4><i class="fas fa-chess-queen"></i> Industry Leaders</h4>
+        </div>
+        <h1 class="hero-title animate__animated animate__fadeInUp">
+          Pioneering <span class="highlight">AI Companies</span> <br>Shaping the Future
+        </h1>
+        <p class="hero-description animate__animated animate__fadeInUp">
+          Discover the trailblazing companies that are transforming industries through artificial intelligence, 
+          driving innovation, and redefining what's possible with cutting-edge technology.
+        </p>
+        <div class="companies-stats">
+          <div class="stat animate__animated animate__fadeInLeft">
+            <div class="stat-icon">
+              <i class="fas fa-industry"></i>
+            </div>
+            <span class="stat-number" data-count="150">0</span>
+            <span class="stat-label">AI Companies</span>
+          </div>
+          <div class="stat animate__animated animate__fadeInUp">
+            <div class="stat-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <span class="stat-number" data-count="2.3">0</span>
+            <span class="stat-label">Trillion Market Value</span>
+          </div>
+          <div class="stat animate__animated animate__fadeInRight">
+            <div class="stat-icon">
+              <i class="fas fa-user-tie"></i>
+            </div>
+            <span class="stat-number" data-count="850">0</span>
+            <span class="stat-label">K AI Professionals</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Companies Grid -->
+  <section class="companies-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle animate__animated animate__fadeInUp">
+          <i class="fas fa-crown"></i> Industry Titans
+        </span>
+        <h2 class="section-title animate__animated animate__fadeInUp">
+          Leading the <span class="accent">AI Revolution</span>
+        </h2>
+        <p class="section-description animate__animated animate__fadeInUp">
+          These pioneering companies are at the forefront of artificial intelligence innovation, 
+          transforming industries and shaping the future of technology.
+        </p>
+      </div>
+
+      <!-- Companies Filter -->
+      <div class="companies-filter">
+        <button class="filter-btn active" onclick="filterCompanies('all')">
+          <i class="fas fa-th-large"></i> All Companies
+        </button>
+        <button class="filter-btn" onclick="filterCompanies('tech')">
+          <i class="fas fa-microchip"></i> Tech Giants
+        </button>
+        <button class="filter-btn" onclick="filterCompanies('startup')">
+          <i class="fas fa-seedling"></i> Startups
+        </button>
+        <button class="filter-btn" onclick="filterCompanies('research')">
+          <i class="fas fa-flask"></i> Research
+        </button>
+      </div>
+
+      <!-- Companies Grid -->
+      <div class="companies-grid" id="companiesGrid">
+        <!-- Company cards will be dynamically loaded here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Founders Section -->
+  <section class="founders-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">
+          <i class="fas fa-lightbulb"></i> Visionaries
+        </span>
+        <h2 class="section-title">
+          AI <span class="accent">Pioneers</span> & Visionaries
+        </h2>
+        <p class="section-description">
+          Meet the brilliant minds who laid the foundation for modern artificial intelligence 
+          and continue to inspire innovation in the field.
+        </p>
+      </div>
+
+      <div class="founders-grid">
+        <div class="founder-card animate__animated">
+          <div class="founder-glow"></div>
+          <div class="founder-image">
+            <img src="../images/alan.png" alt="Alan Turing">
+            <div class="founder-overlay">
+              <div class="founder-year">1950</div>
+            </div>
+          </div>
+          <div class="founder-content">
+            <h3>Alan Turing</h3>
+            <p class="founder-title">Father of Computer Science</p>
+            <p class="founder-desc">
+              Proposed the Turing Test and laid the theoretical foundation for artificial intelligence 
+              in his seminal paper "Computing Machinery and Intelligence."
+            </p>
+            <div class="founder-contribution">
+              <span><i class="fas fa-bolt"></i> Turing Test</span>
+              <span><i class="fas fa-brain"></i> Machine Intelligence</span>
+            </div>
+            <a href="#" class="founder-link">
+              Learn More <i class="fas fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="founder-card animate__animated">
+          <div class="founder-glow"></div>
+          <div class="founder-image">
+            <img src="../images/warren.png" alt="Warren McCulloch & Walter Pitts">
+            <div class="founder-overlay">
+              <div class="founder-year">1943</div>
+            </div>
+          </div>
+          <div class="founder-content">
+            <h3>McCulloch & Pitts</h3>
+            <p class="founder-title">Neural Network Pioneers</p>
+            <p class="founder-desc">
+              Developed the first mathematical model of artificial neurons, creating the foundation 
+              for modern neural networks and computational neuroscience.
+            </p>
+            <div class="founder-contribution">
+              <span><i class="fas fa-network-wired"></i> Artificial Neurons</span>
+              <span><i class="fas fa-project-diagram"></i> Neural Models</span>
+            </div>
+            <a href="#" class="founder-link">
+              Learn More <i class="fas fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="founder-card animate__animated">
+          <div class="founder-glow"></div>
+          <div class="founder-image">
+            <img src="../images/john.png" alt="John McCarthy">
+            <div class="founder-overlay">
+              <div class="founder-year">1956</div>
+            </div>
+          </div>
+          <div class="founder-content">
+            <h3>John McCarthy</h3>
+            <p class="founder-title">Coined "Artificial Intelligence"</p>
+            <p class="founder-desc">
+              Organized the Dartmouth Conference and coined the term "Artificial Intelligence," 
+              establishing AI as a formal academic discipline.
+            </p>
+            <div class="founder-contribution">
+              <span><i class="fas fa-language"></i> LISP Creator</span>
+              <span><i class="fas fa-users"></i> AI Founder</span>
+            </div>
+            <a href="#" class="founder-link">
+              Learn More <i class="fas fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Adoption Timeline -->
+  <section class="ai-timeline">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">
+          <i class="fas fa-hourglass-half"></i> AI Evolution
+        </span>
+        <h2 class="section-title">
+          The <span class="accent">Journey</span> of AI Adoption
+        </h2>
+      </div>
+
+      <div class="timeline-container">
+        <div class="timeline-line">
+          <div class="line-glow"></div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">1950s</div>
+          <div class="timeline-content">
+            <div class="timeline-icon">
+              <i class="fas fa-brain"></i>
+            </div>
+            <h3>Foundational Years</h3>
+            <p>Birth of AI as an academic discipline with early neural networks and symbolic AI research.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">1980s</div>
+          <div class="timeline-content">
+            <div class="timeline-icon">
+              <i class="fas fa-robot"></i>
+            </div>
+            <h3>Expert Systems</h3>
+            <p>AI adoption in business with expert systems for medical diagnosis and financial analysis.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">2010s</div>
+          <div class="timeline-content">
+            <div class="timeline-icon">
+              <i class="fas fa-network-wired"></i>
+            </div>
+            <h3>Deep Learning</h3>
+            <p>Breakthroughs in deep learning revolutionize image recognition and natural language processing.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">2020s</div>
+          <div class="timeline-content">
+            <div class="timeline-icon">
+              <i class="fas fa-bolt"></i>
+            </div>
+            <h3>Generative AI</h3>
+            <p>Mass adoption of generative AI transforms content creation, coding, and business processes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <div class="cta-glow"></div>
+        <h2>Join the AI Revolution</h2>
+        <p>Partner with leading AI companies and access cutting-edge technology to transform your business.</p>
+        <div class="cta-actions">
+          <a href="#" class="btn btn-primary btn-glow">
+            <i class="fas fa-handshake"></i> Become a Partner
+          </a>
+          <a href="#" class="btn btn-secondary">
+            <i class="fas fa-download"></i> Download Report
+          </a>
+        </div>
+        <p class="form-note">
+          <i class="fas fa-shield-alt"></i> 
+          Connect with 150+ AI companies and 850K professionals worldwide.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="#" class="footer-logo">
+            <div class="logo-orb">
+              <img src="../images/logo.png" alt="Logo" class="logo-image">
+            </div>
+            <h2 class="logo-text">Rev<span class="logo-highlight">AI</span></h2>
+          </a>
+          <p class="footer-description">
+            Pioneering the AI revolution by connecting businesses with innovative AI companies 
+            and transformative technology solutions.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-link">
+              <i class="fab fa-twitter"></i>
+              <div class="link-glow"></div>
+            </a>
+            <a href="#" class="social-link">
+              <i class="fab fa-linkedin"></i>
+              <div class="link-glow"></div>
+            </a>
+            <a href="#" class="social-link">
+              <i class="fab fa-github"></i>
+              <div class="link-glow"></div>
+            </a>
+            <a href="#" class="social-link">
+              <i class="fab fa-discord"></i>
+              <div class="link-glow"></div>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <div class="link-group">
+            <h3>AI Companies</h3>
+            <ul>
+              <li><a href="#"><i class="fas fa-chevron-right"></i> Tech Giants</a></li>
+              <li><a href="#"><i class="fas fa-chevron-right"></i> Startups</a></li>
+              <li><a href="#"><i class="fas fa-chevron-right"></i> Research Labs</a></li>
+              <li><a href="#"><i class="fas fa-chevron-right"></i> AI Partners</a></li>
+            </ul>
+          </div>
+
+          <div class="link-group">
+            <h3>Industries</h3>
+            <ul>
+              <li><a href="#"><i class="fas fa-chevron-right"></i> Healthcare AI</a></li>
+              <li><a href="#"><i class="fas fa-chevron-right"></i> Fintech</a></li>
+              <li><a href="#"><i class="fas fa-chevron-right"></i> Autonomous Vehicles</a></li>
+              <li><a href="#"><i class="fas fa-chevron-right"></i> Manufacturing</a></li>
+            </ul>
+          </div>
+
+          <div class="link-group">
+            <h3>Resources</h3>
+            <ul>
+              <li><a href="#"><i class="fas fa-chevron-right"></i> Company Directory</a></li>
+              <li><a href="#"><i class="fas fa-chevron-right"></i> Industry Reports</a></li>
+              <li><a href="#"><i class="fas fa-chevron-right"></i> Case Studies</a></li>
+              <li><a href="#"><i class="fas fa-chevron-right"></i> AI Insights</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 RevAI. All rights reserved. </p>
+        <div class="footer-legal">
+          <a href="#"><i class="fas fa-shield-alt"></i> Privacy Policy</a>
+          <a href="#"><i class="fas fa-file-contract"></i> Terms of Service</a>
+          <a href="#"><i class="fas fa-balance-scale"></i> AI Ethics Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="../js/particles.js"></script>
+  <script>
+    // Company data
+    const companies = [
+      {
+        id: 1,
+        logo: '../images/google.png',
+        name: 'Google',
+        category: 'tech',
+        industry: 'Technology',
+        description: 'Leads AI innovation through Google Brain, DeepMind, and TensorFlow, revolutionizing search, language processing, and autonomous systems.',
+        marketCap: '$1.8T',
+        aiFocus: 'Machine Learning, NLP, Computer Vision',
+        innovations: ['BERT', 'TensorFlow', 'Waymo', 'DeepMind']
+      },
+      {
+        id: 2,
+        logo: '../images/microsoft.png',
+        name: 'Microsoft',
+        category: 'tech',
+        industry: 'Technology',
+        description: 'Integrates AI across Azure, Office 365, and enterprise solutions with OpenAI partnership, focusing on productivity and cloud AI services.',
+        marketCap: '$2.9T',
+        aiFocus: 'Cloud AI, Enterprise Solutions, Copilot',
+        innovations: ['Azure AI', 'GitHub Copilot', 'Microsoft 365 AI', 'OpenAI Partnership']
+      },
+      {
+        id: 3,
+        logo: '../images/amazon.png',
+        name: 'Amazon',
+        category: 'tech',
+        industry: 'E-commerce & Cloud',
+        description: 'Pioneers AI in e-commerce recommendations, AWS AI services, Alexa voice technology, and logistics optimization through machine learning.',
+        marketCap: '$1.7T',
+        aiFocus: 'Recommendation Systems, AWS AI, Alexa',
+        innovations: ['Alexa', 'AWS SageMaker', 'Amazon Go', 'Recommendation Engine']
+      },
+      {
+        id: 4,
+        logo: '../images/meta.png',
+        name: 'Meta',
+        category: 'tech',
+        industry: 'Social Media',
+        description: 'Advances AI for content moderation, personalized feeds, augmented reality, and large language models like LLaMA for social innovation.',
+        marketCap: '$1.2T',
+        aiFocus: 'Social AI, Computer Vision, Metaverse',
+        innovations: ['LLaMA', 'PyTorch', 'AR/VR AI', 'Content Moderation']
+      },
+      {
+        id: 5,
+        logo: '../images/openai.png',
+        name: 'OpenAI',
+        category: 'startup',
+        industry: 'Research',
+        description: 'Leads generative AI revolution with ChatGPT, DALL-E, and GPT-4, making advanced AI accessible to businesses and developers worldwide.',
+        marketCap: '$80B',
+        aiFocus: 'Generative AI, Large Language Models',
+        innovations: ['ChatGPT', 'GPT-4', 'DALL-E', 'Codex']
+      },
+      {
+        id: 6,
+        logo: '../images/tesla.png',
+        name: 'Tesla',
+        category: 'tech',
+        industry: 'Automotive',
+        description: 'Pioneers autonomous vehicle technology with full self-driving systems, neural networks for perception, and energy optimization AI.',
+        marketCap: '$600B',
+        aiFocus: 'Autonomous Vehicles, Robotics',
+        innovations: ['Full Self-Driving', 'Dojo', 'Tesla Bot', 'Neural Networks']
+      },
+      {
+        id: 7,
+        logo: '../images/nvidia.png',
+        name: 'NVIDIA',
+        category: 'tech',
+        industry: 'Hardware',
+        description: 'Powers AI revolution with GPU technology, CUDA platform, and AI supercomputing solutions for research and enterprise applications.',
+        marketCap: '$1.1T',
+        aiFocus: 'AI Hardware, GPUs, Deep Learning',
+        innovations: ['CUDA', 'DGX Systems', 'Tensor Cores', 'AI Enterprise']
+      },
+      {
+        id: 8,
+        logo: '../images/anthropic.png',
+        name: 'Anthropic',
+        category: 'startup',
+        industry: 'Research',
+        description: 'Develops constitutional AI and Claude language models with focus on AI safety, alignment, and responsible artificial intelligence.',
+        marketCap: '$18B',
+        aiFocus: 'AI Safety, Constitutional AI',
+        innovations: ['Claude', 'Constitutional AI', 'AI Alignment']
+      }
+    ];
+
+    let currentFilter = 'all';
+
+    // Initialize companies
+    function loadCompanies() {
+      const companiesGrid = document.getElementById('companiesGrid');
+      companiesGrid.innerHTML = '';
+
+      const filteredCompanies = currentFilter === 'all'
+        ? companies
+        : companies.filter(company => company.category === currentFilter);
+
+      filteredCompanies.forEach((company, index) => {
+        const card = document.createElement('div');
+        card.className = `company-card animate__animated animate__fadeInUp`;
+        card.style.animationDelay = `${index * 0.1}s`;
+
+        card.innerHTML = `
+          <div class="company-card-inner">
+            <div class="company-glow"></div>
+            <div class="company-header">
+              <div class="company-logo">
+                <img src="${company.logo}" alt="${company.name}">
+                <div class="logo-frame"></div>
+              </div>
+              <div class="company-info">
+                <div class="company-category">
+                  <i class="fas fa-${getCategoryIcon(company.category)}"></i>
+                  ${company.category.charAt(0).toUpperCase() + company.category.slice(1)}
+                </div>
+                <h3>${company.name}</h3>
+                <p class="company-industry">${company.industry}</p>
+              </div>
+            </div>
+            <div class="company-content">
+              <p class="company-description">${company.description}</p>
+              <div class="company-stats">
+                <div class="company-stat">
+                  <span class="stat-label">Market Cap</span>
+                  <span class="stat-value">${company.marketCap}</span>
+                </div>
+                <div class="company-stat">
+                  <span class="stat-label">AI Focus</span>
+                  <span class="stat-value">${company.aiFocus}</span>
+                </div>
+              </div>
+              <div class="company-innovations">
+                <h4><i class="fas fa-bolt"></i> Key Innovations</h4>
+                <div class="innovation-tags">
+                  ${company.innovations.map(innovation => `
+                    <span class="innovation-tag">${innovation}</span>
+                  `).join('')}
+                </div>
+              </div>
+              <div class="company-actions">
+                <button class="btn-company" onclick="viewCompanyDetails(${company.id})">
+                  <i class="fas fa-eye"></i> View Details
+                </button>
+                <button class="btn-company btn-secondary" onclick="explorePartnership(${company.id})">
+                  <i class="fas fa-handshake"></i> Partnership
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+
+        companiesGrid.appendChild(card);
+      });
+    }
+
+    // Filter companies
+    function filterCompanies(category) {
+      currentFilter = category;
+
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      event.target.classList.add('active');
+
+      loadCompanies();
+    }
+
+    // Get category icon
+    function getCategoryIcon(category) {
+      const icons = {
+        'tech': 'microchip',
+        'startup': 'seedling',
+        'research': 'flask'
+      };
+      return icons[category] || 'building';
+    }
+
+    // View company details
+    function viewCompanyDetails(companyId) {
+      const company = companies.find(c => c.id === companyId);
+      alert(`Viewing ${company.name}\n\nMarket Cap: ${company.marketCap}\nIndustry: ${company.industry}\n\n${company.description}`);
+    }
+
+    // Explore partnership
+    function explorePartnership(companyId) {
+      const company = companies.find(c => c.id === companyId);
+      alert(`Partnership inquiry for ${company.name} has been sent!\n\nOur team will contact you about collaboration opportunities.`);
+    }
+
+    // Initialize on load
+    window.onload = function() {
+      loadCompanies();
+
+      // Animate stats
+      const stats = document.querySelectorAll('.stat-number');
+      stats.forEach(stat => {
+        const target = parseFloat(stat.getAttribute('data-count'));
+        const duration = 2000;
+        const increment = target / (duration / 16);
+        let current = 0;
+
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            stat.textContent = target;
+            clearInterval(timer);
+          } else {
+            stat.textContent = target % 1 === 0 ? Math.floor(current) : current.toFixed(1);
+          }
+        }, 16);
+      });
+
+      // Intersection observer for animations
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      // Observe founder cards
+      document.querySelectorAll('.founder-card').forEach(card => {
+        observer.observe(card);
+      });
+    };
+
+    // Mobile menu toggle
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navMenu = document.querySelector('.nav-menu');
+
+    mobileMenu.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+    });
+
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        mobileMenu.classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>
